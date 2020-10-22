@@ -1,8 +1,7 @@
 default: 
-  image: ubuntu:latest
+  image: docker:latest
   before_script:
     - docker info
-
 
 build-homepage:
   script:
