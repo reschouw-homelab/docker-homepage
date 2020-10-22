@@ -5,7 +5,7 @@ default:
 
 build-homepage:
   script:
-    - docker build -t homepage
+    - docker build .
     - docker run homepage 
     #- docker tag my-image my-registry:5000/my-image
     #- docker push my-registry:5000/my-image
