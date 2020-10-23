@@ -5,5 +5,5 @@ default:
 
 build-homepage:
   script:
-    - docker build -t homepage .
-    - echo Build complete!
+    - docker build -t gitlab.dorwinia.com:5050/homelab/docker-homepage .
+    - docker push gitlab.dorwinia.com:5050/homelab/docker-homepage
