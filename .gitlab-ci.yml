@@ -1,8 +1,9 @@
-stages:
+tages:
   - default
   - build_push
+  - deploy_staging
 
-default: 
+default:
   image: docker:latest
   before_script:
     - docker info
@@ -13,3 +14,10 @@ build_push:
   script:
     - docker build -t gitlab.dorwinia.com:5050/homelab/docker-homepage .
     - docker push gitlab.dorwinia.com:5050/homelab/docker-homepage
+
+deploy_staging:
+  stage: deploy_staging
+  script:
+    - kubectl rollout restart deployment/homepage-stag --namespace=homepage-stag
+  only:
+    - master
