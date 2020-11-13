@@ -1,19 +1,15 @@
 stages:
-  - setup
-  - build-push
-#  - deploy-stag
-#  - deploy-prod
+  - default
+  - build_push
 
-setup: 
+default: 
   image: docker:latest
   before_script:
     - docker info
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
 
-build-push:
+build_push:
+  stage: build_push
   script:
     - docker build -t gitlab.dorwinia.com:5050/homelab/docker-homepage .
     - docker push gitlab.dorwinia.com:5050/homelab/docker-homepage
-
-#deploy-stag:
-  
