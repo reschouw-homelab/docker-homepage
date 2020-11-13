@@ -8,6 +8,7 @@ default:
   before_script:
     - docker info
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - apt install kubectl
 
 build_push:
   stage: build_push
