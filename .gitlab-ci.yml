@@ -1,4 +1,4 @@
-tages:
+stages:
   - default
   - build_push
   - deploy_staging
