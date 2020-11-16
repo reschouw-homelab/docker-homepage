@@ -36,6 +36,7 @@ deploy_production:
   stage: deploy_production
   script:
     - kubectl rollout restart deployment/homepage-prod --namespace=homepage-prod
+    - sleep 60
     - curl -s http://kube-worker-1.dorwinia.com:30001 | grep "Welcome to Dorwinia"
     - curl -s http://kube-worker-2.dorwinia.com:30001 | grep "Welcome to Dorwinia"
     - curl -s http://kube-worker-3.dorwinia.com:30001 | grep "Welcome to Dorwinia"
