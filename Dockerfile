@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM arm64v8/nginx:latest
 
 COPY content/index.html /usr/share/nginx/html/index.html
 COPY content/resume.pdf /usr/share/nginx/html/resume.pdf
